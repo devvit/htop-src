@@ -3,7 +3,7 @@
 set -eo pipefail
 
 cmd="curl --silent --location"
-releases_path="https://api.github.com/repos/rust-lang/rust/tags"
+releases_path="https://api.github.com/repos/hishamhm/htop/tags"
 
 if [ -n "$GITHUB_API_TOKEN" ]; then
   cmd="$cmd --header 'Authorization: token $GITHUB_API_TOKEN'"
