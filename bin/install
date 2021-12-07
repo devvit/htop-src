@@ -10,7 +10,7 @@ install() {
   git clone https://github.com/htop-dev/htop
   cd htop; git checkout $version
   sh autogen.sh
-  ./configure --prefix=$install_dir
+  ./configure --prefix=$install_dir --disable-unicode
   make install || exit 1
 }
 
