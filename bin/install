@@ -7,7 +7,7 @@ install() {
   build_dir=$(mktemp -d)
   cd $build_dir
 
-  git clone https://github.com/htop-dev/htop
+  git clone https://github.com/mscalora/htop
   cd htop; git checkout $version
   sh autogen.sh
   ./configure --prefix=$install_dir --disable-unicode
