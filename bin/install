@@ -8,16 +8,9 @@ install() {
   cd $build_dir
 
   # git clone https://github.com/mscalora/htop
-  # git clone https://github.com/Low-power/htop
-  git clone https://github.com/htop-dev/htop
+  git clone --depth 1 --recursive https://github.com/htop-dev/htop
   cd htop
-  git reset --hard 24e4faa2e0f15093d7b9dc3e2c8a06393cc809aa
-  # git checkout $version
   sh autogen.sh
-  # curl -fsSL -JO https://github.com/htop-dev/htop/releases/download/${version}/htop-${version}.tar.xz
-  # bsdtar -xf htop*
-  # rm -rf htop*z
-  # cd htop*
   ./configure --prefix=$install_dir --disable-unicode
   make install || exit 1
 }
