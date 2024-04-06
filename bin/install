@@ -7,13 +7,13 @@ install() {
   build_dir=$(mktemp -d)
   cd $build_dir
 
-  # git clone https://github.com/mscalora/htop
-  # cd htop; git checkout $version
-  # sh autogen.sh
-  curl -fsSL -JO https://github.com/htop-dev/htop/releases/download/${version}/htop-${version}.tar.xz
-  bsdtar -xf htop*
-  rm -rf htop*z
-  cd htop*
+  git clone https://github.com/mscalora/htop
+  cd htop; git checkout $version
+  sh autogen.sh
+  # curl -fsSL -JO https://github.com/htop-dev/htop/releases/download/${version}/htop-${version}.tar.xz
+  # bsdtar -xf htop*
+  # rm -rf htop*z
+  # cd htop*
   ./configure --prefix=$install_dir --disable-unicode
   make install || exit 1
 }
